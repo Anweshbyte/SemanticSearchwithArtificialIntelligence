@@ -40,7 +40,8 @@ class DataIndexing:
         self.db.upsert_data(self.data)
         logging.info("files got upserted.")
         self.data = pd.DataFrame(columns=["id","vector","meta"])
-
+        print("Pinecone index has now {0} vectors.".format(self.db.curr_size()))
+        
 if __name__=="__main__":
     DI = DataIndexing()
     print("Here are the list of files in your source_docs folder and their upload status : ")
