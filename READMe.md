@@ -1,33 +1,24 @@
-### Welcome to the Semantic Search with Artificial Intelligence challenge! You will push your code here.
+# Semantic Search with Artificial Intelligence
 
-#### Description
+**Project Overview:**
+This project aims to implement a semantic search using artificial intelligence. This project uses Pinecone as the vector database to store the user's text files. The project supports three types of files: word (.doc or .docx), text (.txt), and pdf (.pdf) files. Using the Huggingface's ALBERT model, the text in these files is converted into vectors and then upserted to a Pinecone index. The project has a frontend page where the user can search his query for similarity within the text stored in the Pinecone index. The user's query is also embedded into a vector using Huggingface's ALBERT model and then a similiarity search is carried out using Pinecone's inbuilt functions. The search results represent the text stored in the Pinecone index resembling the user's query, ranked based on relevance.
 
+## Installation
+### Requirements
+1. Python 3.6 or higher
+2. pip
 
-**General Overview:**
-
-The aim of this project is to implement a semantic search using artificial intelligence. You will develop a search engine that encodes the user's query into a vector and searches for similarity within a body of text. The user can store all the text to be searched using a vector database like Pinecone. This search engine will be designed to provide accurate and relevant search results.
-
-
-
-**Required Components:**
-
-- Vector Database: You will need to choose a vector database like Pinecone to store the text that will be searched. The vector database will be used to store and index the text documents.
-- Vectorization Algorithm: You will need to implement a vectorization algorithm that encodes the text documents into a vector representation. You can use Open AI’s latest text embeddings to vectorize the search query and the text documents to be searched from.
-- Similarity Search Algorithm: You will need to implement a similarity search algorithm that can find the most similar documents to the user's query. The algorithm should be optimized for speed and accuracy.
-- User Interface: You will need to develop a user interface that allows users to enter their queries and view the search results. The interface should be intuitive and easy to use.
-
-<!-- -->
-
-
-
-**Optional Components:**
-
-- Multi-lingual Support: The search engine could support multiple languages, allowing users to search for documents in different languages.
-- Synonym Expansion: The search engine could include a synonym expansion feature that expands the user's query to include similar words and phrases.
-- Document Ranking: The search engine could rank the search results based on their relevance to the user's query.
-- Entity Extraction: The search engine could include an entity extraction feature that identifies and extracts entities like people, places, and organizations from the search results.
-- Customizable Search Index: The search engine could allow users to choose what text they want to be searched from and create a customized search index.
-- Integration with Third-Party Services: The search engine could be integrated with third-party services like Google Drive or Dropbox to provide a more comprehensive search experience.
-
-<!-- -->
-
+### Setup Project
+1. Fork the repository.
+2. Clone the repository. In your terminal, type:
+  <pre><code>git clone https://github.com/your-username/SemanticSearchwithArtificialIntelligence.git</code></pre>
+3. Set up a python virtual environment.
+    1. Install virtualenv using the following command: <code> pip install virtualenv</code>
+    2. Navigate to your project directory.
+    3. Create a new virtual environment. <code> virtualenv env </code>.
+    4. Activate the virtual environment. On Windows , <code>env\Scripts\activate.bat</code>. On Linux/macOS , <code>source env/bin/activate</code>.
+4. Install the required packages: <code> pip install -r requirements.txt</code>
+5. Add your text files to the folder **source-docs**.
+6. Rename the .env.sample file to .env  and fill in the following details : your Pinecone API key, Pinecone Environment name, Pinecone Index Name and the location of this project folder in your system.
+7. Run the data_indexing.py file and give the file index as input to embed the text in the file into vectors and upsert them into the Pinecone index.
+8. Run the app.py file and search http://127.0.0.1:8000 on the browser.
