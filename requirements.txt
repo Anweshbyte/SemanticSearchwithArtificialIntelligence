@@ -1,0 +1,11 @@
+numpy
+pandas
+Flask
+pinecone-client
+python-dotenv
+docx
+pypdf2
+sentencepiece
+transformers
+torch
+# -e .
